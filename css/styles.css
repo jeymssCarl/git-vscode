@@ -1,6 +1,6 @@
 /* ============================================================
-   Student Supplies Ordering System — Base Styles (M1)
-   Covers R6 (readability) and R39 (usability).
+   Student Supplies Ordering System — Base Styles (M1 + M2)
+   Covers R6, R9, R39.
    ============================================================ */
 
 :root {
@@ -12,6 +12,8 @@
   --color-accent: #1f6feb;
   --color-accent-hover: #1558c0;
   --color-price: #b45309;
+  --color-danger: #b91c1c;
+  --color-danger-hover: #991b1b;
   --radius: 8px;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
   --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -86,7 +88,6 @@ body {
   padding-bottom: 0.5rem;
 }
 
-/* Product list spans wider on large screens for readability. */
 #product-list-section {
   grid-column: span 2;
 }
@@ -159,7 +160,88 @@ body {
   transform: translateY(1px);
 }
 
-/* ---------- Placeholders ---------- */
+/* Small square buttons for quantity +/- */
+.btn-qty {
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  line-height: 1;
+  font-size: 1rem;
+  background-color: #e6edf5;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.btn-qty:hover:not(:disabled) {
+  background-color: #d3deea;
+}
+
+.btn-qty:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-remove {
+  background-color: transparent;
+  color: var(--color-danger);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid var(--color-danger);
+}
+
+.btn-remove:hover {
+  background-color: var(--color-danger);
+  color: #ffffff;
+}
+
+/* ---------- Cart Table (M2) ---------- */
+
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.cart-table th,
+.cart-table td {
+  text-align: left;
+  padding: 0.5rem 0.4rem;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: middle;
+}
+
+.cart-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-muted);
+}
+
+.cart-table td.numeric,
+.cart-table th.numeric {
+  text-align: right;
+}
+
+.cart-qty-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.cart-qty-value {
+  min-width: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.cart-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ---------- Placeholders / Summary ---------- */
 
 .placeholder-text {
   color: var(--color-muted);
