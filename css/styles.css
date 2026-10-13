@@ -1,0 +1,181 @@
+/* ============================================================
+   Student Supplies Ordering System — Base Styles (M1)
+   Covers R6 (readability) and R39 (usability).
+   ============================================================ */
+
+:root {
+  --color-bg: #f4f6f8;
+  --color-panel: #ffffff;
+  --color-border: #d9e1e8;
+  --color-text: #1f2d3d;
+  --color-muted: #6b7c8f;
+  --color-accent: #1f6feb;
+  --color-accent-hover: #1558c0;
+  --color-price: #b45309;
+  --radius: 8px;
+  --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+/* ---------- Header / Footer ---------- */
+
+.app-header {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 1.25rem 2rem;
+  box-shadow: var(--shadow);
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.app-subtitle {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Layout ---------- */
+
+.app-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.panel {
+  background-color: var(--color-panel);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+/* Product list spans wider on large screens for readability. */
+#product-list-section {
+  grid-column: span 2;
+}
+
+@media (max-width: 720px) {
+  #product-list-section {
+    grid-column: span 1;
+  }
+}
+
+/* ---------- Product Grid ---------- */
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.product-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: #fbfcfd;
+  transition: border-color 0.15s ease;
+}
+
+.product-card:hover {
+  border-color: var(--color-accent);
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.product-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-price);
+  margin: 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+/* ---------- Placeholders ---------- */
+
+.placeholder-text {
+  color: var(--color-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+#total-amount {
+  color: var(--color-price);
+}

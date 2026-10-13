@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Supplies Ordering System</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header class="app-header">
+    <h1>Student Supplies Ordering System</h1>
+    <p class="app-subtitle">Campus School Supplies Shop</p>
+  </header>
+
+  <main class="app-layout">
+
+    <!-- ============================================================
+         SECTION 1: PRODUCT LIST  (R3, R4, R5, R6)
+         Products are rendered by js/app.js from js/products.js.
+         ============================================================ -->
+    <section id="product-list-section" class="panel">
+      <h2>Product List</h2>
+      <div id="product-list" class="product-grid">
+        <!-- Rendered dynamically. Empty until app.js runs. -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2: SHOPPING CART  (R3 — placeholder for M2)
+         ============================================================ -->
+    <section id="cart-section" class="panel">
+      <h2>Shopping Cart</h2>
+      <div id="cart-container">
+        <p class="placeholder-text">Your cart is empty.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3: ORDER SUMMARY  (R3 — placeholder for M3)
+         ============================================================ -->
+    <section id="order-summary-section" class="panel">
+      <h2>Order Summary</h2>
+      <div id="order-summary">
+        <p class="summary-row">
+          <span>Total Amount:</span>
+          <span id="total-amount">P0.00</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 4: PAYMENT SECTION  (R3 — placeholder for M4)
+         ============================================================ -->
+    <section id="payment-section" class="panel">
+      <h2>Payment</h2>
+      <div id="payment-container">
+        <p class="placeholder-text">Payment options will appear here after items are added.</p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 5: RECEIPT SECTION  (R3 — placeholder for M5)
+         ============================================================ -->
+    <section id="receipt-section" class="panel">
+      <h2>Receipt</h2>
+      <div id="receipt-container">
+        <p class="placeholder-text">No transaction yet.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="app-footer">
+    <p>IT415 Midterm Practical Examination &mdash; Student Supplies Ordering System</p>
+  </footer>
+
+  <!-- Load order matters: products must be defined before app.js uses it. -->
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
